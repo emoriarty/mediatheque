@@ -1,4 +1,5 @@
 MediathequeServer::Application.routes.draw do
+  resources :multi_media
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

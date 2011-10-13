@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20111010161630) do
     t.string   "path"
     t.string   "file"
     t.string   "file_type"
+    t.string   "cover"
     t.integer  "year"
     t.text     "description"
     t.datetime "created_at"

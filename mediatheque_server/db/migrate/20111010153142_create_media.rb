@@ -5,6 +5,7 @@ class CreateMedia < ActiveRecord::Migration
       t.string :path
       t.string :file
       t.string :file_type
+      t.string :cover, :default => nil, :null => true
       t.integer :year, :default => nil, :null => true
       t.text :description, :default => nil, :null => true
 

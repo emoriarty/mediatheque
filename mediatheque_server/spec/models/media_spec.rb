@@ -1,5 +1,7 @@
 require 'spec_helper'
 
+include MultiMedia
+
 describe Media do
 
   before :each do 
