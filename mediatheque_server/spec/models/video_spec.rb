@@ -64,12 +64,20 @@ describe Video do
     video.should be_valid
   end
 
-#  context "with title and file_type duplicated in BBDD should not be created " do
-#    before do
-#      puts @attr
-#      Video.create! @attr
-#    end
-#    it { should_not accept_values_for(:title, "Alien") }
-#  end
+  context "with title and file_type duplicated in BBDD" do
+  
+    before :each do
+      Video.create! @attr
+      @video = Video.create @attr
+    end
+    
+    it "should return the message 'title has already been taken'" do
+      @video.errors.messages[:title][0].should == "has already been taken"
+    end
+    
+    it "should return the message 'path has already been taken'" do
+      @video.errors.messages[:path][0].should == "has already been taken"
+    end
+  end
 
 end

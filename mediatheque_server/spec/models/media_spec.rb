@@ -9,9 +9,9 @@ describe Media do
       :title => "Alien", 
       :path => "/home/enrique-arias/Videos", 
       :file_type => "alien(1979).avi", 
+      :file => "alien(1979).avi",
       :year => "1979", 
-      :description => "When commercial towing vehicle Nostromo, heading back to Earth, intercepts an SoS signal from a nearby planet, the crew are under obligation to investigate. After a bad landing on the planet, some crew members leave the ship to explore the area. At the same time as they discover a hive colony of some unknown creature, the ship's computer deciphers the message to be a warning, not a call for help. When one of the eggs is disturbed, the crew do not know the danger they are in until it is too late.",
-      :type => Media.to_s
+      :description => "When commercial towing vehicle Nostromo, heading back to Earth, intercepts an SoS signal from a nearby planet, the crew are under obligation to investigate. After a bad landing on the planet, some crew members leave the ship to explore the area. At the same time as they discover a hive colony of some unknown creature, the ship's computer deciphers the message to be a warning, not a call for help. When one of the eggs is disturbed, the crew do not know the danger they are in until it is too late."
     }
   end
 
