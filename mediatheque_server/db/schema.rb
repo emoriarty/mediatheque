@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111010161630) do
+ActiveRecord::Schema.define(:version => 20111022210904) do
+
+  create_table "genres", :force => true do |t|
+    t.string   "name",       :null => false
+    t.string   "media_type", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "media", :force => true do |t|
     t.string   "title"

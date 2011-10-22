@@ -1,5 +1,7 @@
 module MultiMedia
   class Media < ActiveRecord::Base
+    has_and_belongs_to_many :genres
+    
     validates :title, :presence => true,
       :uniqueness => { :scope => :file_type, :case_sensitive => false }
     validates :path, :presence => true,

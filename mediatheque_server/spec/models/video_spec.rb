@@ -72,11 +72,11 @@ describe Video do
     end
     
     it "should return the message 'title has already been taken'" do
-      @video.errors.messages[:title][0].should == "has already been taken"
+      @video.errors.messages[:title].include?("has already been taken").should be_true
     end
     
     it "should return the message 'path has already been taken'" do
-      @video.errors.messages[:path][0].should == "has already been taken"
+      @video.errors.messages[:path][0].include?("has already been taken").should be_true
     end
   end
 
