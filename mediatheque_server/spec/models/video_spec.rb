@@ -79,5 +79,22 @@ describe Video do
       @video.errors.messages[:path][0].include?("has already been taken").should be_true
     end
   end
+  
+  context "with genres as tags" do
+    it "should accept a tags string" do
+      Video.create! @attr
+      @video = Video.create @attr
+      @video.genre_list = "Sci-fi, Terror, 70's"
+      @video.genre_list.should == ["Sci-fi", "Terror", "70's"]
+    end
+    
+    it "should include the just created video with a concrete tag" do
+      @video = Video.create(@attr)
+      @video.genre_list = "Sci-fi"
+      @video.save
+      puts Video.tagged_with("Sci-fi").inspect
+      Video.tagged_with("Sci-fi").include?(@video).should be_true
+    end
+  end
 
 end
