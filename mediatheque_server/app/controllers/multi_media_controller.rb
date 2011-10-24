@@ -9,4 +9,15 @@ class MultiMediaController < ApplicationController
       format.json{ render :json => @videos }
     end
   end
+  
+  def show
+    @video = Video.find params[:id].to_i
+    
+    respond_to do |format|
+      format.html
+      format.xml{ render :xml => @video }
+      format.json{ render :json => @video }
+    end
+  end
+  
 end

@@ -65,16 +65,15 @@ describe Video do
   end
 
   context "with title and file_type duplicated in BBDD" do
-  
     before :each do
       Video.create! @attr
       @video = Video.create @attr
     end
     
-    it "should return the message 'title has already been taken'" do
-      @video.errors.messages[:title].include?("has already been taken").should be_true
-    end
-    
+    # it "should return the message 'title has already been taken'" do
+    #   @video.errors.messages[:title].include?("has already been taken").should be_true
+    # end
+    # 
     it "should return the message 'path has already been taken'" do
       @video.errors.messages[:path][0].include?("has already been taken").should be_true
     end
@@ -92,9 +91,14 @@ describe Video do
       @video = Video.create(@attr)
       @video.genre_list = "Sci-fi"
       @video.save
-      puts Video.tagged_with("Sci-fi").inspect
       Video.tagged_with("Sci-fi").include?(@video).should be_true
     end
   end
 
+  context "get information from a web service" do
+    it "should get information about itself from a web service with the name" do
+      @video = Video.create @attr
+      @video.retrieve_info.to_json.class.should == {}.to_json.class
+    end
+  end
 end

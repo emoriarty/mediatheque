@@ -30,6 +30,14 @@ describe MultiMediaController do
       response.body.class.should == [video].to_xml.class
     end
   end
-
+  
+  # describe "Getting a video" do
+  #   it "should find a video" do
+  #     video = mock_model Video
+  #     Video.should_receive(:find).with(video.id)
+  #     post :show, { :id => video.id }, :format => :json
+  #     assigns[:video].should == video
+  #   end
+  # end
 end
 
