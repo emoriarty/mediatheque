@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(:version => 20111023184952) do
     t.string   "file_type"
     t.string   "cover"
     t.integer  "year"
-    t.text     "description"
+    t.text     "plot"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "director"
