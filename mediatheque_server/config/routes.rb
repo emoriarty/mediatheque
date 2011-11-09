@@ -1,10 +1,4 @@
 MediathequeServer::Application.routes.draw do
-  resources :multi_media do
-    collection do
-      get 'video_info'
-    end
-  end
-  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
