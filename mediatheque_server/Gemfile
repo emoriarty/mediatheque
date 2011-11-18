@@ -41,13 +41,13 @@ gem 'web-app-theme', '~> 0.8.0'
 group :test, :development do
 	gem 'rspec-rails', '>=2.7.0'
 	gem 'cucumber-rails', '>=1.2.0'
-	gem 'webrat', '>= 0.7.3'
 	gem 'fakeweb'
 	gem 'minitest', '>=2.7.0'
+	gem 'capybara', '>=1.1.1'
 end
 
 group :development do
-  gem 'annotate', '2.4.0'
+  gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
 end
 
 group :test do

@@ -5,9 +5,10 @@ class CreateUsers < ActiveRecord::Migration
       t.string :surname_1
       t.string :surname_2
       t.string :nick
-      t.string :password
+      t.string :encrypted_password
+      t.string :salt
       t.date :birthday
-      t.string :country
+      t.string :email
 
       t.timestamps
     end

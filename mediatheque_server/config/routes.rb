@@ -1,4 +1,9 @@
 MediathequeServer::Application.routes.draw do
+  get '/signup',  :to => 'users#new'
+  get '/login', :to => 'users#index'
+  
+  resources :videos
+  resources :users
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
