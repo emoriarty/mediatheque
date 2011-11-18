@@ -1,0 +1,8 @@
+<%= form_for @video do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :year %>
+  <%= f.select :year, (1898..Date.today.year).to_a.map(&:to_s) %>
+
+  <%= f.submit "Save" %>
+<% end %>
