@@ -1,8 +1,30 @@
-<%= form_for @video do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :year %>
-  <%= f.select :year, (1898..Date.today.year).to_a.map(&:to_s) %>
-
-  <%= f.submit "Save" %>
-<% end %>
+<div class="block" id="block-forms-2">
+	<div class="content">
+		<h2>New Video</h2>
+		<div class="inner">
+			<%= form_for @video, :builder => ApplicationHelper::WebAppThemeFormBuilder, html: { class: 'form' } do |f| %>
+				<div class="columns wat-cf">
+					<div class="column left">
+						<%= f.text_fields :title, :director, :writer, :composer %>
+						<%= f.labeled_text_area :cast %>
+					</div>
+					<div class="column right">
+						<%= f.labeled_select :year, (1898..Date.today.year).to_a.map(&:to_s) %>
+						<%= f.labeled_text_field :path, description: 'write here the path or the video file from the root (by now just avi files)' %>
+						<%= f.labeled_text_field :duration %>
+						<%= f.labeled_text_area :plot %>
+					</div>
+				</div>
+				<div class="group navform wat-cf">
+					<div class="group navform wat-cf">
+						<button class="button" type="submit">
+						  <img src="/assets/icons/tick.png" alt="Save"> Save
+	          </button>
+						<span class="text_button_padding">or</span>
+						<%= link_to 'Cancel', videos_path, :class => 'text_button_padding link_button' %>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,19 @@
+<% content_for :stylesheets_links do %>
+	<%= stylesheet_link_tag 'videos' %>
+<% end %>
+
+<% content_for :sidebar do %>
+	<div class="block">
+		<h3>Menu</h3>
+		<ul class="navigation">
+			<li><%= link_to "Create a new video (manually)", new_video_path %></li>
+			<li><%= link_to "Add videos from your computer", '#' %></li>
+		</ul>
+	</div>
+<% end %>
+
+<% content_for :section_content do %>
+	<%= yield %>
+<% end %>
+
+<%= render file: 'layouts/media' %>

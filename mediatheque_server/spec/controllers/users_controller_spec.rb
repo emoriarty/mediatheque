@@ -58,9 +58,9 @@ describe UsersController do
         flash[:notice].should eq("Account created successfully")
       end
       
-      it "redirects to the login with a succesful message" do
+      it "redirects to the sing in with a succesful message" do
         post 'create'
-        response.should redirect_to login_path
+        response.should redirect_to signin_path
       end
     end
     

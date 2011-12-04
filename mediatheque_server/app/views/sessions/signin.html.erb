@@ -1,0 +1,21 @@
+<div id="box">
+	<div class="block" id="block-signup">
+		<h2>Sign in</h2>
+		<div class="content">
+			<% if flash[:notice] %>
+				<%= render partial: 'shared/notice_message', locals: { notice_message: flash[:notice] } %>
+			<% end %>
+			<% if flash[:error] %>
+				<%= render partial: 'shared/error_message', locals: { error_message: flash[:error] } %>
+			<% end %>
+			<%= form_for @user, :url => signin_path, :builder => ApplicationHelper::WebAppThemeFormBuilder, :html => { :class => "form" } do |f| %>
+				<%= f.text_fields_compact :nick, :password %>
+				<div class="group navform wat-cf">
+					<button class="button" type="submit">
+					  <img src="assets/icons/tick.png" alt="Save"> Sign in
+           </button>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>

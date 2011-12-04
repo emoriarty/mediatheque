@@ -6,7 +6,7 @@ describe "users/new.html.erb" do
   end
   
   before :each do
-    @builder = UsersFormBuilder.new :user, user, self, {}, nil
+    @builder = WebAppThemeFormBuilder.new :user, user, self, {}, nil
   end
   
   it "renders an empty form to create a user" do
@@ -28,8 +28,8 @@ describe "users/new.html.erb" do
     end
   end
   
-  it "doens't show template _error_messages" do
-    view.should_not render_template :partial => "shared/_error_messages"
+  it "doens't show template _error_message" do
+    view.should_not render_template :partial => "shared/_error_message"
   end
   
   describe "shows template _error_messages" do
@@ -40,7 +40,7 @@ describe "users/new.html.erb" do
     after :each do
       assign :user, user
       render
-      view.should render_template :partial => "shared/_error_messages"
+      view.should render_template :partial => "shared/_error_message"
     end
     
     it "when email don't be validate" do
@@ -48,7 +48,7 @@ describe "users/new.html.erb" do
     end
     
     it "when name don't be validate" do
-      user.errors.add :email
+      user.errors.add :name
     end
     
     it "when nick don't be validate" do

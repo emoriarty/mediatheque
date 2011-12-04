@@ -26,6 +26,9 @@ gem 'movie_searcher'
 #This gem generates a default web app theme
 gem 'web-app-theme', '~> 0.8.0'
 
+# Pagination with Kaminari
+gem 'kaminari'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -38,6 +41,7 @@ gem 'web-app-theme', '~> 0.8.0'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+
 group :test, :development do
 	gem 'rspec-rails', '>=2.7.0'
 	gem 'cucumber-rails', '>=1.2.0'
@@ -48,6 +52,7 @@ end
 
 group :development do
   gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
+	gem 'yard', '>=0.7.3'
 end
 
 group :test do

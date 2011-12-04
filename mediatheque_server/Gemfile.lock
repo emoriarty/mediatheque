@@ -87,6 +87,8 @@ GEM
       thor (~> 0.14)
     json (1.6.1)
     json_pure (1.6.1)
+    kaminari (0.12.4)
+      rails (>= 3.0.0)
     levenshteinish (0.0.3)
       hintable_levenshtein
     mail (2.3.0)
@@ -190,6 +192,7 @@ GEM
       thor (~> 0.14)
     xpath (0.1.4)
       nokogiri (~> 1.3)
+    yard (0.7.3)
 
 PLATFORMS
   ruby
@@ -203,6 +206,7 @@ DEPENDENCIES
   database_cleaner
   fakeweb
   jquery-rails
+  kaminari
   minitest (>= 2.7.0)
   movie_searcher
   rails (= 3.1.1)
@@ -212,3 +216,4 @@ DEPENDENCIES
   turn
   uglifier (>= 1.0.3)
   web-app-theme (~> 0.8.0)
+  yard (>= 0.7.3)

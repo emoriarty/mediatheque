@@ -1,7 +1,3 @@
-Given /^I am on the signup page$/ do
-  visit '/signup'
-end
-
 When /^I fill sign up fields with (.*), (.*), (.*), (.*), (.*)/ do |name, nick, email, password, password_confirmation|
   steps %Q{
     When I fill in "Name" with #{name}

@@ -5,8 +5,10 @@
 # files.
 
 require 'cucumber/rails'
-require 'Capybara'
-require 'Capybara/cucumber'
+require 'capybara'
+require 'capybara/rails'
+require 'capybara/cucumber'
+require 'capybara/session'
 require 'rspec'
 
 # Capybara defaults to XPath selectors rather than Webrat's default of CSS3. In

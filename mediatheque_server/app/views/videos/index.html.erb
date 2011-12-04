@@ -1,1 +1,17 @@
-<%= link_to "Add Video", new_video_path %>
+<div class="block" id="block-text">
+	<div class="content">
+		<h2 class="title">Videos Section</h2>
+		<div class="inner">
+			<% if @videos.empty? %>
+				<h3>Your videothèque is empty, you have to choices to begin:</h3>
+				<ul>
+				  <li>Creating video manually,</li>
+				  <li>Choose a video file or a directory from your machine.</li>
+				</ul>
+				<p>Each option is on the menu on right side.</p>
+			<% else %>
+				
+			<% end %>
+		</div>
+	</div>
+</div>

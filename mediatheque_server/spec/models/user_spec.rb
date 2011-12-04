@@ -37,6 +37,27 @@ describe User do
     user = User.create @attr.merge(:password_confirmation => '')
     user.should_not be_valid
   end
+  
+  context "When the user use long fields" do
+    context "the name field" do
+      it "cannot be more than 75" do 
+        user = User.create @attr.merge(:name => 'a' * 76)
+        user.should_not be_valid
+      end
+
+      it "cannot be less than 3" do 
+        user = User.create @attr.merge(:name => 'aa')
+        user.should_not be_valid
+      end
+    end
+    
+    context "the nick field" do
+      it "cannot be more than 25" do
+        user = User.create @attr.merge(:nick => 'a' * 26)
+        user.should_not be_valid
+      end
+    end 
+  end
 end
 # == Schema Information
 #

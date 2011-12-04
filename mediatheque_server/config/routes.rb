@@ -1,6 +1,10 @@
 MediathequeServer::Application.routes.draw do
   get '/signup',  :to => 'users#new'
-  get '/login', :to => 'users#index'
+  post '/signup', :to => 'users#create'
+  get '/signin', :to => 'sessions#signin'
+  post '/signin', :to => 'sessions#create'
+  get '/signout', :to => 'sessions#signout'
+  get '/home', :to => 'main#index'
   
   resources :videos
   resources :users
@@ -54,7 +58,7 @@ MediathequeServer::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
-
+  root :to => 'main#index'
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

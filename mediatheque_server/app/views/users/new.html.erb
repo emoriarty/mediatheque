@@ -1,39 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Mediathèque</title>
-  <%= stylesheet_link_tag 'web_app_theme' %>
-  <%= csrf_meta_tag %>
-</head>
-<body>
-  <div id="container">
-    <div id="header">
-      <h1><a href="/">Mediathèque</a></h1>
-      </div>
-      <div id="main-navigation">
-        <ul class="wat-cf"></ul>
-      </div>
-    </div>
-
-		<div id="box">
-			<div class="block" id="block-signup">
-				<h2>Sign up</h2>
-				<div class="content">
-					<% if @user.errors.any? %>
-						<%= render 'shared/error_messages' %>
-					<% end %>
-					<%= form_for @user, :builder => UsersHelper::UsersFormBuilder, :html => { :class => "form" } do |f| %>
-						<%= f.text_fields :email, :name, :nick, :password, :password_confirmation %>
-						<div class="group navform wat-cf">
-							<button class="button" type="submit">
-							  <img src="assets/icons/tick.png" alt="Save"> Sign up
-	            </button>
-						</div>
-					<% end %>
+<div id="box">
+	<div class="block" id="block-signup">
+		<h2>Sign up</h2>
+		<div class="content">
+			<% if @user.errors.any? %>
+				<%= render partial: 'shared/error_message', collection: @user.errors.full_messages %>
+			<% end %>
+			<%= form_for @user, :url => signup_path, :builder => ApplicationHelper::WebAppThemeFormBuilder, :html => { :class => "form" } do |f| %>
+				<%= f.text_fields_compact :email, :name, :nick %>
+				<%= f.text_fields :password, :password_confirmation %>
+				<div class="group navform wat-cf">
+					<button class="button" type="submit">
+					  <img src="assets/icons/tick.png" alt="Save"> Sign up
+           </button>
 				</div>
-			</div>
+			<% end %>
 		</div>
-
 	</div>
-</body>
-</html>
+</div>
+

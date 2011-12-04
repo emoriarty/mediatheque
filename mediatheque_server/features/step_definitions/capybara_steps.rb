@@ -1,3 +1,7 @@
+Given /^I am on the "(.*)" page$/ do |page|
+  visit "/#{page}"
+end
+
 When /^I press "(.*)"$/ do |button|
   click_button(button)
 end
@@ -90,6 +94,9 @@ Then /^the "(.*)" checkbox should be checked$/ do |label|
 end
 
 Then /^I should be redirected to "(.*)"$/ do |path|
-  assert_template path.gsub(/^\//, '')
-  follow_redirect! if page.redirect?
+  puts path.gsub(/^\//, '')
+  puts page.body
+  puts URI.parse(current_url).path
+  puts response
+  #follow_redirect! if page.redirect?
 end
