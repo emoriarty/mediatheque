@@ -15,8 +15,8 @@
 			<div id="user-navigation">
 				<ul>
 					<li>
-						<% if user %>
-							<%= user.nick %>
+						<% unless @user.nil? %>
+							<%= @user.nick %>
 							<li><%= link_to 'Profile', '#' %></li>
 							<li><%= link_to 'Sing out', signout_path %></li>
 						<% else %>
@@ -27,11 +27,20 @@
 			</div>
     </div>
 		<div id="wrapper" class="wat-cf">
+			<div class="flash">
+		    <% flash.each do |type, message| -%>
+		      <div class="message <%= type %>">
+		        <p><%= message %></p>
+		      </div>
+		    <% end %>
+		  </div>
 			<%= content_for?(:content) ? yield(:content) : yield %>
 			<div id="sidebar">
 		    <%= yield :sidebar %>
 		  </div>
     </div>
   </div>
+	<%= debug params.inspect %>
+	<%= debug session.inspect %>
 </body>
 </html>

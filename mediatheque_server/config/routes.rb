@@ -4,7 +4,6 @@ MediathequeServer::Application.routes.draw do
   get '/signin', :to => 'sessions#signin'
   post '/signin', :to => 'sessions#create'
   get '/signout', :to => 'sessions#signout'
-  get '/home', :to => 'main#index'
   
   resources :videos
   resources :users

@@ -1,7 +1,4 @@
 module ApplicationHelper
-  def user
-    session[:user]
-  end
   
   def active_section?(name)
     controller.controller_name == name
@@ -49,6 +46,36 @@ module ApplicationHelper
       end
     end
     
+    # Returns the password field name labeled
+    #
+    # @param [String] field_name The field name 
+    # @param [Hash] options Options to modify the style, by default :compact => false, :description => nil
+    def labeled_password_field( field_name, options = {} )
+      return unless field_name
+      
+      default_options = { compact: false, description: nil } 
+      options = default_options.merge options
+      
+      if options[:compact]
+        compact_password_field field_name, options[:description]
+      else
+        common_password_field field_name, options[:description]
+      end
+    end
+    
+    # Returns the text field name labeled
+    #
+    # @param [String] field_name The field name 
+    # @param [Hash] options Options to modify the style, by default :compact => false, :description => nil
+    def labeled_file_field( field_name, options = {} )
+      return unless field_name
+      
+      default_options = { compact: false, description: nil } 
+      options = default_options.merge options
+      
+      common_file_field field_name, options[:description]
+    end
+    
     # Returns the text area name labeled
     #
     # @param [String] field_name The field name 
@@ -58,8 +85,13 @@ module ApplicationHelper
       
       default_options = { compact: false, description: nil } 
       options = default_options.merge options
-      
-      common_text_area field_name, options[:description]
+      if options[:description]
+        description = options[:description]
+        options.delete[:description]
+      else
+        description = nil
+      end
+      common_text_area field_name, description, options
     end
     
     # Returns the text area name labeled
@@ -85,6 +117,14 @@ module ApplicationHelper
         :class => 'group wat-cf'
     end
     
+    def compact_password_field( field, description )
+      content_tag :div, 
+        content_tag(:div, label(field, :class => "label"), :class => "left" ) + 
+          content_tag( :div, password_field(field, :class => "text_field"), :class => "right" ) +
+          add_description(description),
+        :class => 'group wat-cf'
+    end
+    
     def common_text_field( field, description )
       content_tag :div,  
         label(field, :class => 'label') + 
@@ -93,10 +133,29 @@ module ApplicationHelper
         :class => 'group'
     end
     
-    def common_text_area( field, description )
+    def common_password_field( field, description )
+      content_tag :div,  
+        label(field, :class => 'label') + 
+          password_field(field, :class => 'text_field') + 
+          add_description(description),
+        :class => 'group'
+    end
+    
+    def common_file_field( field, description, options = {})
+      content_tag :div,  
+        label(field, :class => 'label') + 
+          file_field(field, :class => 'text_field') + 
+          add_description(description),
+        :class => 'group'
+    end
+    
+    def common_text_area( field, description, options = {} )
+      default_options = { class: 'text_area' }
+      options = default_options.merge options
+      
       content_tag :div,
         label(field, class: 'label') +
-          text_area(field, class: 'text_area') +
+          text_area(field, options) +
           add_description(description),
         class: 'group'
     end

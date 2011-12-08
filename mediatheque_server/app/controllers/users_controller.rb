@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   
+  skip_before_filter :signed_in?, :only => [:new, :create]
+  
   def index
   end
 

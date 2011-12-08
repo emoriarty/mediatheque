@@ -1,6 +1,13 @@
 class Media < ActiveRecord::Base
   acts_as_taggable
   acts_as_taggable_on :genres
+  
+  has_attached_file :cover, :styles => { :list => "164x220#", :thumb => "100x100>" }
+  
+  belongs_to :user
+  
+  validates :title, :presence => true, :uniqueness => {:scope => :user_id}
+  
 end
 # == Schema Information
 #

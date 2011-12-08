@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
   
+  skip_before_filter :signed_in?, :only => [:create, :signin]
+  
   def signin
     @user = User.new
       
@@ -9,30 +11,33 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by_nick(params[:user][:nick]) or User.find_by_email(params[:user][:nick])
-
-    if user.nil?
+    @user = User.find_by_nick(params[:user][:nick]) or User.find_by_email(params[:user][:nick])
+    
+    if @user.nil?
       @user = User.new
-      flash[:error] = "User doesn't exist"
+      flash.now[:error] = "User doesn't exist"
     else
-      user = User.authenticate params[:user][:nick], params[:user][:password]
-      if user
-        session[:user] = user
+      @user = User.authenticate params[:user][:nick], params[:user][:password]
+      if @user
+        session[:user_salt] = @user.salt
+        session[:user_id] = @user.id
       else
-        flash[:error] = "User/Password is wrong"
+        @user = User.new
+        flash.now[:error] = "User/Password is wrong"
       end
     end
-    
+
     respond_to do |format|
       format.html{ flash[:error] ? render('signin') : redirect_to(root_path) }
     end
   end
   
   def signout
-    session[:user] = nil
+    session[:user_salt] = nil
+    session[:user_id] = nil
     
     respond_to do |format|
-      format.html{ redirect_to home_path }
+      format.html{ redirect_to root_path }
     end
   end
 

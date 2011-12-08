@@ -1,5 +1,5 @@
 class Video < Media
-  has_one :user
+  TYPES = [:avi, :mkv, :mp4, :ogv]
 end
 # == Schema Information
 #

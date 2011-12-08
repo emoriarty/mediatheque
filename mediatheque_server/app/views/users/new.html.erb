@@ -7,7 +7,8 @@
 			<% end %>
 			<%= form_for @user, :url => signup_path, :builder => ApplicationHelper::WebAppThemeFormBuilder, :html => { :class => "form" } do |f| %>
 				<%= f.text_fields_compact :email, :name, :nick %>
-				<%= f.text_fields :password, :password_confirmation %>
+				<%= f.labeled_password_field :password %>
+				<%= f.labeled_password_field :password_confirmation %>
 				<div class="group navform wat-cf">
 					<button class="button" type="submit">
 					  <img src="assets/icons/tick.png" alt="Save"> Sign up

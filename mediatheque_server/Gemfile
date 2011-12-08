@@ -29,6 +29,9 @@ gem 'web-app-theme', '~> 0.8.0'
 # Pagination with Kaminari
 gem 'kaminari'
 
+#Attaching files
+gem "paperclip", "~> 2.4"
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -48,6 +51,7 @@ group :test, :development do
 	gem 'fakeweb'
 	gem 'minitest', '>=2.7.0'
 	gem 'capybara', '>=1.1.1'
+	gem 'thin'
 end
 
 group :development do
