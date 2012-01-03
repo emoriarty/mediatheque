@@ -1,0 +1,94 @@
+body {
+	font-family: 'Lato', sans-serif;
+	background-color:#E5E1E1;
+	color:#333;
+	font-weight: 300;
+}
+
+hr{
+	border-bottom:1px solid #333030;
+	margin:20px 0;
+}
+
+.main{
+	/*font-family: 'Lato', sans-serif;*/
+}
+
+/* ERROR MESSAGES */
+.error{
+	color:#bf0000;
+	text-align:center;
+}
+
+/* HEADER STYLE */
+header {
+	background-color:#333;
+	color:#e5e1e1;
+	height:90px;
+	margin-bottom:40px;
+}
+
+header h1 {
+	font-size:2.2em;
+	margin-top:20px;
+	font-weight: 700;
+	/*font-family:'century gothic';*/
+}
+
+header a {
+	color:#e5e1e1;
+	text-decoration:none;
+}
+
+header a:hover {
+	color:#f1f1f1;
+}
+
+header ul {
+	font-size:0.9em;
+	margin-top:42px;
+}
+
+header li {
+	padding:0 20px 0 0;
+}
+
+#user-navigation ul {
+	float:right;
+}
+
+ul.inline li { 
+	display: inline; 
+	list-style-type: none;
+}
+
+/* WRAPPER STYLE */
+#wrapper{
+	min-height:400px;
+}
+
+/* FOOTER STYLE */
+footer {
+	margin-top:100px;
+	font-size:.7em;
+	text-align:center;
+}
+
+
+
+
+.debug_dump {
+	font-size:.6em;
+	margin-top:20px;
+	text-align:left;
+}
+
+/* BUTTONS */
+.button img{
+	margin-right: 5px;
+}
+
+/* OUTILS */
+.separator_40{
+ margin-bottom: 40px;	
+}

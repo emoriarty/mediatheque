@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 //#block-text .content .inner ul { margin-left:20px; }
 
 .text_area { height:100px }
@@ -11,7 +12,15 @@ div.video_list{
 	overflow: hidden;
 }
 
-ul.list { margin: 0 0; line-height: 0px; }
+div.algo{
+	display:inline;
+}
+
+ul.list { 
+	margin: 0 0; 
+	line-height: 0px; 
+	width:100%;
+}
 
 ul.list li { 
 	display: inline; 
@@ -20,11 +29,11 @@ ul.list li {
 	margin: 0 1px 0 2px; 
 	border-bottom-width: 0;
 	border-bottom-style: none;
-	
+	float: none;
 }
 
 ul.list li div.info_video{
-	width: 154px;
+	width: 176px;
 	padding:5px;
 	background: url(image_path('tiles/tile_info_image.png')) repeat;
 	color: #fff;
@@ -64,4 +73,8 @@ ul.list li:hover div.info_video{
 	visibility:visible; 
 	opacity:1; 
 	bottom:1px;
+}
+
+ul.list li .options {
+	margin-bottom: 10px;
 }

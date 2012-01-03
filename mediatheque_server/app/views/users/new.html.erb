@@ -1,5 +1,5 @@
-<div id="box">
-	<div class="block" id="block-signup">
+<div class="prefix_4 grid_8 suffix_4 separator_40">
+	<div class="box">
 		<h2>Sign up</h2>
 		<div class="content">
 			<% if @user.errors.any? %>
@@ -9,10 +9,10 @@
 				<%= f.text_fields_compact :email, :name, :nick %>
 				<%= f.labeled_password_field :password %>
 				<%= f.labeled_password_field :password_confirmation %>
-				<div class="group navform wat-cf">
+				<div class="group buttons">
 					<button class="button" type="submit">
 					  <img src="assets/icons/tick.png" alt="Save"> Sign up
-           </button>
+	          </button>
 				</div>
 			<% end %>
 		</div>

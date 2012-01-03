@@ -1,0 +1,44 @@
+<% content_for :stylesheets_links do %>
+	<%= stylesheet_link_tag 'main', media: 'screen and (min-device-width: 1025px)' %>
+<% end %>
+
+<% if current_user %>
+	<section id="main" class="grid_12">
+		<div class="content">
+			<h2 class="title">Main Section</h2>
+			<div class="inner">
+				<h3>Select the Video section to begin your Videothèque</h3>
+				<p>this the new wolrd to sharing your likings</p>
+			</div>
+		</div>
+	</section>
+<% else %>
+	<article class="prefix_2 grid_12 suffix_2">
+		<%= image_tag 'videos.jpg' %>
+		<h2>Videos</h2>
+		<p>
+			Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos.
+		</p>
+		<p>Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.</p>
+	</article>
+	
+	<div class="clear"></div>
+	
+	<article class="prefix_2 grid_12 suffix_2">
+		<%= image_tag 'music2.jpg' %>
+		<h2>Music</h2>
+		<p>
+			Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+		</p>
+	</article>
+	
+	<div class="clear"></div>
+	
+	<article class="prefix_2 grid_12 suffix_2">
+		<%= image_tag 'bookshelf.jpg' %>
+		<h2>Books</h2>
+		<p>
+			Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+		</p>
+	</article>
+<% end %>

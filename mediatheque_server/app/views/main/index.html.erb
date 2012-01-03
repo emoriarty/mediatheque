@@ -1,14 +1,9 @@
 <% content_for :stylesheets_links do %>
-	<%= stylesheet_link_tag 'main' %>
+	<%= stylesheet_link_tag 'main', media: 'screen and (min-device-width: 1025px)' %>
 <% end %>
 
 <% if current_user %>
-<div class="block" id="block-text">
-	<div class="content">
-		<h2 class="title">Main Section</h2>
-		<div class="inner">
-			<h3>Select the Video section to begin your Videothèque</h3>
-		</div>
-	</div>
-</div>
+	<%= render partial: 'signin' %>
+<% else %>
+	<%= render partial: 'not_signin' %>
 <% end %>

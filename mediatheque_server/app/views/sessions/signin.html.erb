@@ -1,16 +1,36 @@
-<div id="box">
-	<div class="block" id="block-signup">
-		<h2>Sign in</h2>
+<% content_for :stylesheets_links do %>
+	<%= stylesheet_link_tag 'sessions' %>
+<% end %>
+<% content_for :javascripts_links do %>
+	<%= javascript_include_tag "sessions/sessions" %>
+<% end %>
+
+<div class="prefix_4 grid_8 suffix_4 separator_40">
+	<div class="box">
+		<h2><%= t('views.signin.box1title') %></h2>
 		<div class="content">
 			<%= form_for @user, :url => signin_path, :builder => ApplicationHelper::WebAppThemeFormBuilder, :html => { :class => "form", :method => :post } do |f| %>
 				<%= f.labeled_text_field :nick %>
 				<%= f.labeled_password_field :password %>
-				<div class="group navform wat-cf">
+				<div class="group buttons">
 					<button class="button" type="submit">
-					  <img src="assets/icons/tick.png" alt="Save"> Sign in
-           </button>
+					  <img src="assets/icons/tick.png" alt="<%= t('views.signin.signin') %>"><%= t('views.signin.signin').capitalize %>
+	          </button>
 				</div>
 			<% end %>
+		</div>
+	</div>
+</div>
+<div class="clear"></div>
+<div class="prefix_4 grid_8 suffix_4">
+	<div class="box">
+		<h2><%= t('views.signin.box2title') %></h2>
+		<p><%= t('views.signin.text_create_account_3') %></p>
+		<p><%= t('views.signin.text_create_account_2') %></p>
+		<div class="group buttons">
+			<button id="create-account" data-url="<%= signup_path %>" class="button" type="submit">
+			  <img src="assets/icons/tick.png" alt="<%= t('views.signin.create') %>"><%= t('views.signin.create').capitalize %>
+      </button>
 		</div>
 	</div>
 </div>

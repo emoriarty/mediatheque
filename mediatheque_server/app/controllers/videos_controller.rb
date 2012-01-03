@@ -1,7 +1,7 @@
 class VideosController < ApplicationController
   
   def index
-    @videos = @user.videos.page(params[:page] || 1)
+    @videos = current_user.videos.page(params[:page] || 1)
     logger.debug "@videos = #{@videos.inspect}"
   end
 
@@ -28,7 +28,6 @@ class VideosController < ApplicationController
     respond_to do |format|
       format.html{ flash[:error] ? render('new') : redirect_to(videos_path)  }
     end
-    
   end
 
 end

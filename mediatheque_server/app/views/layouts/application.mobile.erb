@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html class="ui-mobile landscape min-width-320px min-width-480px min-width-768px"><!--  landscape min-width-320px min-width-480px min-width-768px min-width-1024px -->
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mediathèque</title>
+	<%= stylesheet_link_tag 'mobile', media: 'only screen and (min-device-width: 320px) and (max-device-width: 480px)'  %>
+	<%= yield :stylesheets_links %>
+  <%= csrf_meta_tag %>
+	<%= yield :javascripts_links %>
+	<%= javascript_include_tag 'http://code.jquery.com/jquery-1.6.4.min.js' %>
+	<%= javascript_include_tag 'http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js' %>
+</head>
+<body>
+	<div data-role="page">
+		<header data-role="header">
+			<div class="container_16">
+      	<div class="prefix_1 grid_14 prefix_1">
+					<h1>
+						<a href="/">Mediathèque</a>
+					</h1>
+				</div>
+				
+				<div class="clear"></div>
+				
+				<nav id="user-navigation" class="prefix_6 grid_10">
+					<ul class="inline">
+							<% unless @user.nil? %>
+								<%= @user.nick %>
+								<li><%= link_to 'Profile', '#' %></li>
+								<li><%= link_to 'Sing out', signout_path %></li>
+							<% else %>
+								<li>
+									<a href="<%= signin_path %>">Sign in</a>
+									<a href="<%= signup_path %>">Sign up</a>
+								</li>
+							<% end %>
+					</ul>
+				</nav>
+
+			</div>
+    </header>
+
+		<div id="wrapper" class="container_16" data-role="content">
+			<div class="flash prefix_4 grid_8 suffix_4">
+		    <% flash.each do |type, message| -%>
+		      <div class="message <%= type %>">
+		        <p><%= message %></p>
+		      </div>
+		    <% end %>
+		  </div>
+			<div class="clear"></div>
+			
+			<%= content_for?(:content) ? yield(:content) : yield %>
+    </div>
+		
+		<footer class="container_16" data-role="footer">
+		  <div class="prefix_2 grid_12 suffix_2">
+		    <p>Copyright &copy; <%= Time.now.year %> Mediathèque.</p>
+		  </div>      
+			<%= debug params.inspect %>
+			<%= debug session.inspect %>
+		</footer>
+  </div>
+	
+	
+</body>
+</html>

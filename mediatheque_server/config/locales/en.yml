@@ -2,4 +2,21 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    models:
+    attributes:
+  views:
+    header:
+      signin: sign in
+      signup: sign up
+      signout: sign out
+    signin:
+      box1title: if you have an account!, log in
+      box2title: do you would like to have an account?
+      singin: sign in
+      create: create
+      text_create_account_1: PENDING Crea tu cuenta en Mediathèque.
+      text_create_account_2: PENDING Mediathèque se compromete a proteger tus datos y a mantenerlos estrictamente confidenciales.
+      text_create_account_3: PENDING Podrás llevar siempre encima tu películas, libros y discos favoritos para mostrarlos a tus amigos.
+  
+  

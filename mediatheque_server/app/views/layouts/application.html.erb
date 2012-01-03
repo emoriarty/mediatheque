@@ -2,45 +2,75 @@
 <html>
 <head>
   <title>Mediathèque</title>
-  <%= stylesheet_link_tag 'web_app_theme' %>
+  <%#= stylesheet_link_tag 'computer', media: 'screen and (min-device-width: 1025px)' %>
+  <%= stylesheet_link_tag 'computer' %>
 	<%= yield :stylesheets_links %>
   <%= csrf_meta_tag %>
+	<%= javascript_include_tag 'application' %>
 	<%= yield :javascripts_links %>
 </head>
 <body>
-  <div id="container">
-    <div id="header">
-      <h1><a href="/">Mediathèque</a></h1>
-			<%= yield :main_navigation %>
-			<div id="user-navigation">
-				<ul>
-					<li>
-						<% unless @user.nil? %>
-							<%= @user.nick %>
-							<li><%= link_to 'Profile', '#' %></li>
-							<li><%= link_to 'Sing out', signout_path %></li>
-						<% else %>
-							<%= link_to 'Sign in', signin_path %> | <%= link_to 'Sign up', signup_path %>
-						<% end %>
-					</li>
-				</ul>
+	<div>
+		<header>
+			<div class="container_16">
+      	<div class="grid_4">
+					<h1>
+						<a href="/">Mediathèque</a>
+					</h1>
+				</div>
+				<nav id="main-navigation" class="prefix_1 grid_7">
+					<% unless current_user.nil? %>
+					<ul class="inline">
+				  	<li class="first<%= ' active' if active_section? 'videos' %>"><%= link_to 'Videos', videos_path %></li>
+						<li<%= "class='active'" if active_section? 'books' %>><%= link_to 'Books', '#' %></li>
+						<li<%= "class='active'" if active_section? 'music' %>><%= link_to 'Music', '#' %></li>
+				  </ul>
+					<% else %>
+						<div  style="height:1px"></div>
+					<% end %>
+				</nav>
+				<nav id="user-navigation" class="grid_4">
+					<ul class="inline">
+						<li>
+							<% unless current_user.nil? %>
+								<%= current_user.nick %>
+								<li><%= link_to 'Profile', '#' %></li>
+								<li><%= link_to 'Sing out', signout_path %></li>
+							<% else %>
+								<a href="<%= signin_path %>"><%= t 'views.header.signin' %></a>
+								| 
+								<a href="<%= signup_path %>"><%= t 'views.header.signup' %></a>
+							<% end %>
+						</li>
+					</ul>
+				</nav>
+
 			</div>
-    </div>
-		<div id="wrapper" class="wat-cf">
-			<div class="flash">
-		    <% flash.each do |type, message| -%>
+    </header>
+
+		<div id="wrapper" class="container_16">
+		  <% flash.each do |type, message| -%>
+		  	<div class="flash prefix_4 grid_8 suffix_4">
 		      <div class="message <%= type %>">
-		        <p><%= message %></p>
+		        <p><%= message.capitalize %></p>
 		      </div>
-		    <% end %>
-		  </div>
+		  	</div>
+		  	<div class="clear"></div>
+		  <% end %>
+			
 			<%= content_for?(:content) ? yield(:content) : yield %>
-			<div id="sidebar">
-		    <%= yield :sidebar %>
-		  </div>
+			<%= yield :sidebar %>
     </div>
+		
+		<footer class="container_16">
+		  <div class="prefix_2 grid_12 suffix_2">
+		    <p>Copyright &copy; <%= Time.now.year %> Mediathèque.</p>
+		  </div>      
+			<%#= debug params.inspect %>
+			<%#= debug session.inspect %>
+		</footer>
   </div>
-	<%= debug params.inspect %>
-	<%= debug session.inspect %>
+	
+	
 </body>
 </html>

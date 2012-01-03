@@ -1,0 +1,21 @@
+fr:
+  activerecord:
+    models:
+      user: Utilisateur
+    attributes:
+      user: 
+        nick: Nick
+        password: Mot de passe
+  views:
+    header:
+      signin: PENDING entrar
+      signup: PENDING registrarse
+      signout: PENDING cerrar
+    signin:
+      box1title: PENDING ¡si tienes una cuenta!, identifícate
+      box2title: PENDING ¿te gustaría tener un cuenta?
+      singin: PENDING entrar
+      create: PENDING crear
+      text_create_account_1: PENDING Crea tu cuenta en Mediathèque.
+      text_create_account_2: PENDING Mediathèque se compromete a proteger tus datos y a mantenerlos estrictamente confidenciales.
+      text_create_account_3: PENDING Podrás llevar siempre encima tu películas, libros y discos favoritos para mostrarlos a tus amigos.

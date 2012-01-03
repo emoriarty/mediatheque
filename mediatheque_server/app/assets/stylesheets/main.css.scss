@@ -2,4 +2,46 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.block {min-height:500px;}
+article {
+	margin-top:40px;
+	color:#333;
+}
+
+article h2 {
+	margin-top:10px;
+}
+
+article img {
+	border:1px solid grey;
+}
+
+article p {
+	margin-top:10px;
+	font-size:.8em;
+	text-align:justify;
+}
+
+section{
+  min-height:244px;
+  text-align:center;
+  border-bottom:1px solid #333030;
+  padding-bottom:30px;
+  margin-bottom:30px;
+}
+
+section h2{
+  font-weight:300;
+  font-size:1.2em;
+  margin-bottom:20px;
+}
+
+section h3{
+  position:relative;
+  top:67px;
+  font-weight:300;
+  font-size:1.5em;
+}
+
+section img{
+  border: 1px solid #333;
+}

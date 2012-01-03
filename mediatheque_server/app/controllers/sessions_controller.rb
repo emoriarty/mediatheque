@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
     
     if @user.nil?
       @user = User.new
-      flash.now[:error] = "User doesn't exist"
+      flash.now[:error] = I18n.t 'signin.messages.user_not_exist'
     else
       @user = User.authenticate params[:user][:nick], params[:user][:password]
       if @user
@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
         session[:user_id] = @user.id
       else
         @user = User.new
-        flash.now[:error] = "User/Password is wrong"
+        flash.now[:error] = I18n.t 'signin.messages.wrong_password'
       end
     end
 

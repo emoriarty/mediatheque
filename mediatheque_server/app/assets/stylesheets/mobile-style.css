@@ -1,0 +1,25 @@
+body {
+	font-family:'helvetica neue';
+}
+
+header {
+	background-color:#333;
+	color:#e5e1e1;
+	height:100px;
+}
+
+header h1 {
+	font-size:1.5em;
+	font-family:'century gothic';
+}
+
+header a {
+	color:#e5e1e1;
+	text-decoration:none;
+	font-weight:thin;
+}
+
+ul.inline li { 
+	display: inline; 
+	list-style-type: none;
+}

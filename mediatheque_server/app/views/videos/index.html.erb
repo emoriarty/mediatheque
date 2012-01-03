@@ -1,5 +1,5 @@
 <div class="block" id="block-text">
-	<div class="content">
+	<div id="content" class="content">
 		<h2 class="title">Videos Section</h2>
 		<div class="inner">
 			<% if @videos.empty? %>
@@ -10,13 +10,17 @@
 				</ul>
 				<p>Each option is on the menu on right side.</p>
 			<% else %>
-				<div class="video_list">
+				<div class="video_list ">
 					<ul class="list">
 						<% @videos.each do |video| %>
 							<li>
 								<%= image_tag video.cover.url(:list) %>
 								<div class="info_video">
-									<p><%= video.title %></p>
+									<p style="margin-bottom: 3px"><%= video.title %></p>
+									<div class="options">
+										<%= link_to image_tag('icons/edit.png'), '#' %>
+										<%= link_to image_tag('icons/remove.gif'), '#' %>
+									</div>
 								</div>
 							</li>
 						<% end %>

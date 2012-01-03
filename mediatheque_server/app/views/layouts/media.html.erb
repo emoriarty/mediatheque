@@ -1,28 +1,3 @@
-<% content_for :javascript do %>
-	<%= javascript_include_tag :defaults %>
-<% end %>
 
-<% if @user %>
-	<% content_for :main_navigation do %>
-		<div id="main-navigation">
-		  <ul class="wat-cf">
-		  	<li class="first<%= ' active' if active_section? 'videos' %>"><%= link_to 'Videothèque', videos_path %></li>
-				<li<%= "class='active'" if active_section? 'books' %>><%= link_to 'Bibliothèque', '#' %></li>
-				<li<%= "class='active'" if active_section? 'music' %>><%= link_to 'Discothèque', '#' %></li>
-		  </ul>
-		</div>
-	<% end %>
-<% end %>
-
-<% content_for :content do %>
-  <div id="main">
-    <%= content_for?(:section_content) ? yield(:section_content) : yield %>
-    <div id="footer">
-      <div class="block">
-        <p>Copyright &copy; <%= Time.now.year %> Mediathèque.</p>
-      </div>      
-    </div>
-  </div>
-<% end %>
 
 <%= render file: 'layouts/application' %>

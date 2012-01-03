@@ -1,5 +1,11 @@
 class Video < Media
   TYPES = [:avi, :mkv, :mp4, :ogv]
+  
+  has_attached_file :cover, :styles => { :list => "183x244#", :thumb => "100x100>" }
+
+  def cover_list
+    cover.url(:list)
+  end
 end
 # == Schema Information
 #

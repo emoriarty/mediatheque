@@ -1,9 +1,12 @@
 class User < ActiveRecord::Base
+  MEDIA_TYPES = %w(videos music books)
+
   attr_accessible :name, :surname_1, :surname_2, :nick, :password, :password_confirmation, :birthday, :email
   attr_accessor :password, :password_confirmation
   
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   
+  # VALIDATIONS
   validates :name, :presence => true,
     :length => { minimum: 3, maximum: 75 }
   validates :nick, :presence => true,
@@ -14,20 +17,38 @@ class User < ActiveRecord::Base
   validates :password, :presence => true,
     :confirmation => true
   
+  # TRANSACTIONS
   before_save :encrypt_password
-    
+  
+  # RELATIONSHIPS
   has_many :videos
+  has_many :music
+  has_many :books
   
-  def has_password?(submitted_password)
-    encrypted_password == encrypt(submitted_password)
-  end
-  
+  # CLASS METHODS
   def self.authenticate(nick_email, submitted_password)
     user = find_by_nick(nick_email) or find_by_email(nick_email)
     return nil if user.nil?
     logger.debug "submitted_password: #{submitted_password}"
     logger.debug "user.has_password?(submitted_password): #{user.has_password?(submitted_password)}"
     return user if user.has_password?(submitted_password)
+  end
+
+  # INSTANCE METHODS
+  MEDIA_TYPES.each do |type|
+    define_method "#{type}?" do
+      send(type).empty?
+    end
+  end
+
+  MEDIA_TYPES.each do |type|
+    define_method "last_#{type}" do |total = 5|
+      send(type).all limit: total
+    end
+  end
+
+  def has_password?(submitted_password)
+    encrypted_password == encrypt(submitted_password)
   end
     
   def movies

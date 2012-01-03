@@ -5,7 +5,7 @@ gem 'rails', '3.1.1'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -24,13 +24,16 @@ gem 'acts-as-taggable-on', '~>2.1.0'
 gem 'movie_searcher'
 
 #This gem generates a default web app theme
-gem 'web-app-theme', '~> 0.8.0'
+#gem 'web-app-theme', '~> 0.8.0'
 
 # Pagination with Kaminari
 gem 'kaminari'
 
 #Attaching files
 gem "paperclip", "~> 2.4"
+
+#Recognize mobile devices
+gem "mobile_fu-rails3", "~> 1.0.6"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -44,6 +47,9 @@ gem "paperclip", "~> 2.4"
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+group :production do
+  gem 'pg'
+end
 
 group :test, :development do
 	gem 'rspec-rails', '>=2.7.0'
@@ -52,6 +58,7 @@ group :test, :development do
 	gem 'minitest', '>=2.7.0'
 	gem 'capybara', '>=1.1.1'
 	gem 'thin'
+  gem 'sqlite3'
 end
 
 group :development do
