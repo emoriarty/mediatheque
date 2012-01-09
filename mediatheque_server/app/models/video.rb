@@ -1,7 +1,15 @@
 class Video < Media
   TYPES = [:avi, :mkv, :mp4, :ogv]
   
-  has_attached_file :cover, :styles => { :list => "183x244#", :thumb => "100x100>" }
+  has_attached_file :cover, :styles => { 
+    :main_list => "183x260#", 
+    :list => "130x198#",
+    :thumb => "100x100>" 
+  }
+
+  def cover_main_list
+    cover.url(:main_list)
+  end
 
   def cover_list
     cover.url(:list)

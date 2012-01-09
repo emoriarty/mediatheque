@@ -3,6 +3,21 @@ module ApplicationHelper
   def active_section?(name)
     controller.controller_name == name
   end
+
+  # Returns a common link or if in the options argument is the action (and/or controller) corresponds with the params action
+  # returns the link as selected
+  #
+  # @param [String] text for the link
+  # @param [String] link to the desired action
+  # @param [Hash] common options for a link_to helper
+  # @return [String] html link tag or text decorated as selected link
+  def selected_link_to(text, link, options)
+    if params[:action] == options[:action]
+      content_tag :span, text, :class => "selected_link"
+    else
+      link_to text, link, options
+    end
+  end
   
   class WebAppThemeFormBuilder < ActionView::Helpers::FormBuilder
     include ActionView::Helpers::TagHelper

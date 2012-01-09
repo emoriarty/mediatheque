@@ -2,18 +2,27 @@
 	<%= stylesheet_link_tag 'videos' %>
 <% end %>
 
+<% content_for :content do %>
+  <% if content_for?(:video_content) %>
+    <% content_for :content do %>
+      <%= yield(:video_content) %>
+    <% end %>
+  <% else %>
+    <div class="grid_12">
+      <%= yield %>
+    </div>
+  <% end %>
+<% end %>
+
 <% content_for :sidebar do %>
-	<div class="block">
-		<h3>Menu</h3>
+	<div class="grid_4 sidebar">
+		<h3><%= t("views.videos.sidebar.title").capitalize %></h3>
 		<ul class="navigation">
-			<li><%= link_to "Create a new video (manually)", new_video_path %></li>
-			<li><%= link_to "Add videos from your computer", '#' %></li>
+      <li><%= selected_link_to t("views.videos.sidebar.index").capitalize, videos_path, action: 'index' %></li>
+			<li><%= selected_link_to t("views.videos.sidebar.new_video").capitalize, new_video_path, action: 'new' %></li>
+			<li><%= link_to t("views.videos.sidebar.add_from_pc").capitalize, '#' %></li>
 		</ul>
 	</div>
 <% end %>
-
-<% content_for :section_content do %>
-	<%= yield %>
-<% end %>
-
-<%= render file: 'layouts/media' %>
+ 
+<%= render template: 'layouts/application' %>

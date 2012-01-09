@@ -1,32 +1,22 @@
-<div class="block" id="block-text">
-	<div id="content" class="content">
-		<h2 class="title">Videos Section</h2>
-		<div class="inner">
-			<% if @videos.empty? %>
-				<h3>Your videothèque is empty, you have to choices to begin:</h3>
-				<ul>
-				  <li>Creating video manually,</li>
-				  <li>Choose a video file or a directory from your machine.</li>
-				</ul>
-				<p>Each option is on the menu on right side.</p>
-			<% else %>
-				<div class="video_list ">
-					<ul class="list">
-						<% @videos.each do |video| %>
-							<li>
-								<%= image_tag video.cover.url(:list) %>
-								<div class="info_video">
-									<p style="margin-bottom: 3px"><%= video.title %></p>
-									<div class="options">
-										<%= link_to image_tag('icons/edit.png'), '#' %>
-										<%= link_to image_tag('icons/remove.gif'), '#' %>
-									</div>
-								</div>
-							</li>
-						<% end %>
-					</ul>
+<% if @videos.empty? %>
+	<h3>Your videothèque is empty, you have to choices to begin:</h3>
+	<ul>
+	  <li>Creating video manually,</li>
+	  <li>Choose a video file or a directory from your machine.</li>
+	</ul>
+	<p>Each option is on the menu on right side.</p>
+<% else %>
+	<% @videos.each_with_index do |video, index| %>
+		<div class="video_item">
+			<%= image_tag video.cover_list, title: video.title %>
+			<div class="info_video">
+				<p style="margin-bottom: 3px" title="<%= video.title %>"><%= truncate(video.title, length: 20) %></p>
+				<div class="options">
+					<%= link_to image_tag('icons/edit.png'), edit_video_path(id: video), alt: t("views.videos.index.edit") %>
+					<%= link_to image_tag('icons/remove.gif'), '#', alt: t("views.videos.index.remove") %>
 				</div>
-			<% end %>
+			</div>
 		</div>
-	</div>
-</div>
+		
+	<% end %>
+<% end %>

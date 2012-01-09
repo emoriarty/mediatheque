@@ -3,78 +3,30 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-//#block-text .content .inner ul { margin-left:20px; }
+//#block-text .content .inner ul { margin-left:20px; } 
 
 .text_area { height:100px }
 
-//videos list
-div.video_list{
-	overflow: hidden;
+#wrapper .grid_12{
 }
 
-div.algo{
-	display:inline;
+.video_item{
+	display:inline-block;
+	width:134px;
+	margin:0 1px;
+	min-height:260px;
+	font-size:.9em;
 }
 
-ul.list { 
-	margin: 0 0; 
-	line-height: 0px; 
-	width:100%;
-}
-
-ul.list li { 
-	display: inline; 
-	position: relative;
-	list-style-type: none;
-	margin: 0 1px 0 2px; 
-	border-bottom-width: 0;
-	border-bottom-style: none;
-	float: none;
-}
-
-ul.list li div.info_video{
-	width: 176px;
-	padding:5px;
-	background: url(image_path('tiles/tile_info_image.png')) repeat;
-	color: #fff;
-	left:0; 
-	bottom: -10px;
-	position: absolute;
+.info_video{
+	display:inline-block;
+	width: 126px;
+	padding:2px;
 	text-align: left;
-	opacity:0;
-	visibility:hidden;
 	line-height: 1em;
-	
-	font-family: arial;
 }
 
-div.carrusel ul.carrusel_slider li div.info_avatar{
-	width:102px; 
-	padding:5px; 
-	background:url(http://www.andalucia.org/estaticos/stylesheets/grey/images/tile_info_image.png) repeat; 
-	color:#fff; 
-	left:0; 
-	bottom:-10px; 
-	position:absolute; 
-	text-align:left; 
-	opacity:0; 
-	visibility:hidden;
-	line-height:1em;
-}
-
-ul.list li div.info_video{
-	-webkit-transition:all 0.5s ease-in-out; 
-	-moz-transition:all 0.5s ease-in-out; 
-	-o-transition:all 0.5s ease-in-out; 
-	transition:all 0.5s ease-in-out;
-}
-
-ul.list li:hover div.info_video{
-	visibility:visible; 
-	opacity:1; 
-	bottom:1px;
-}
-
-ul.list li .options {
-	margin-bottom: 10px;
+/* SIDEBAR */
+.sidebar{
+	font-size:.9em;
 }

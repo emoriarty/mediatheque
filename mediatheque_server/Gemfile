@@ -35,6 +35,9 @@ gem "paperclip", "~> 2.4"
 #Recognize mobile devices
 gem "mobile_fu-rails3", "~> 1.0.6"
 
+#Transalate routes
+gem 'rails-translate-routes'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

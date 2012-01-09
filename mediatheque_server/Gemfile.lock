@@ -137,6 +137,8 @@ GEM
       activesupport (= 3.1.1)
       bundler (~> 1.0)
       railties (= 3.1.1)
+    rails-translate-routes (0.0.1)
+      rails (>= 3.0)
     railties (3.1.1)
       actionpack (= 3.1.1)
       activesupport (= 3.1.1)
@@ -228,6 +230,7 @@ DEPENDENCIES
   paperclip (~> 2.4)
   pg
   rails (= 3.1.1)
+  rails-translate-routes
   rspec-rails (>= 2.7.0)
   sass-rails (~> 3.1.4)
   sqlite3

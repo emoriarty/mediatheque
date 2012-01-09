@@ -9,6 +9,17 @@ es:
         name: Nombre
         email: Correo electrónico
         password_confirmation: Confirmación de la contraseña
+      video:
+        title: Título
+        director: Director
+        writer: Guionista
+        composer: Compositor
+        cast: Reparto
+        year: Año
+        path: Ruta
+        duration: Duración
+        plot: Sinopsis
+        cover: Portada
     errors:
       messages:
         blank: no puede estar vacío
@@ -42,3 +53,15 @@ es:
         empty_video: todavía no has añadido nada a tu videoteca
         empty_music: todavía no has añadido nada a tu discoteca
         empty_book: todavía no has añadido nada a tu biblioteca
+    videos:
+      sidebar:
+        title: menú
+        new_video: crear una nueva película
+        add_from_pc: añadir peliculas desde tu ordenador
+        index: listado
+      index:
+        edit: editar
+        remove: eliminar
+      new:
+        title: nuevo video
+        path_desc: escribe la ruta donde se encuantra el archivo de video desde la raiz del sistema

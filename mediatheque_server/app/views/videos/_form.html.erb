@@ -1,0 +1,35 @@
+<% content_for :video_content do %>
+  <div class="box grid_12 suffix_4">
+    <h2><%= t("views.videos.new.title").capitalize %></h2>
+  </div>
+  <div class="clear"></div>
+  <%= form_for @video, :builder => ApplicationHelper::WebAppThemeFormBuilder, html: { class: 'form' } do |f| %>
+    <div class="grid_6 box">
+      <div class="content">
+        <%= f.text_fields :title, :director, :writer, :composer %>
+        <%= f.labeled_text_area :cast %>
+        <%= f.labeled_select :year, (1898..Date.today.year).to_a.map(&:to_s) %>
+        <%= f.labeled_text_field :path, description: t("views.videos.new.path_desc") %>
+        <%= f.labeled_text_field :duration %>
+        <%= f.labeled_text_area :plot %>
+        <div class="group navform wat-cf">
+          <div class="group navform wat-cf">
+            <button class="button" type="submit">
+              <img src="/assets/icons/tick.png" alt="Save"> Save
+            </button>
+            <span class="text_button_padding">or</span>
+            <%= link_to 'Cancel', videos_path, :class => 'text_button_padding link_button' %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid_6 box">
+      <div class="content">
+        <%= f.labeled_file_field :cover %>
+        <div id="cover">
+          <%= image_tag( @video.cover, title: @video.title, class: 'obj' ) if @video.cover? %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

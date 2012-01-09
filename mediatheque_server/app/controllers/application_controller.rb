@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   
   helper_method :current_user, :signed_in?
   
-  before_filter :signed_in?
+  before_filter :signed_in?, :set_locale
   
   def current_user
     logger.debug "@user_logged.nil?: #{@user_logged.nil?}"
@@ -29,4 +29,9 @@ class ApplicationController < ActionController::Base
     logger.debug "\n\n"
     request.user_agent =~ /Mobile|webOS/
   end
+
+  def set_locale
+    I18n.locale = params[:locale] if params.include?('locale')
+  end
+
 end

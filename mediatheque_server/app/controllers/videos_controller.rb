@@ -2,12 +2,26 @@ class VideosController < ApplicationController
   
   def index
     @videos = current_user.videos.page(params[:page] || 1)
-    logger.debug "@videos = #{@videos.inspect}"
+
+    respond_to do |format|
+      format.html
+    end
   end
 
   def new
-    logger.debug "\n\n\nuser: #{@user.inspect}"
     @video = Video.new
+
+    respond_to do |format|
+      format.html
+    end
+  end
+
+  def edit
+    @video = Video.find params[:id]
+
+    respond_to do |format|
+      format.html
+    end
   end
 
   def create

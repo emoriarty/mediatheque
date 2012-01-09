@@ -43,7 +43,7 @@ class User < ActiveRecord::Base
 
   MEDIA_TYPES.each do |type|
     define_method "last_#{type}" do |total = 5|
-      send(type).all limit: total
+      send(type).all limit: total, order: 'created_at DESC'
     end
   end
 
