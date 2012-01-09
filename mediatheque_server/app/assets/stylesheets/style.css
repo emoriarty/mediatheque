@@ -20,9 +20,18 @@ hr{
 
 }
 
-/* ERROR MESSAGES */
+/* MESSAGES */
+.message{
+	margin: 10px;
+}
+
 .error{
 	color:#bf0000;
+	text-align:center;
+}
+
+.notice{
+	color:#4d874d;
 	text-align:center;
 }
 
@@ -95,6 +104,8 @@ footer {
 	color:#473f3f;
 	text-decoration:underline;
 }
+
+
 
 
 .debug_dump {

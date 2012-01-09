@@ -8,12 +8,12 @@
 <% else %>
 	<% @videos.each_with_index do |video, index| %>
 		<div class="video_item">
-			<%= image_tag video.cover_list, title: video.title %>
+			<%= link_to image_tag(video.cover_list, class: 'cover'), video_path(id: video) %>
 			<div class="info_video">
 				<p style="margin-bottom: 3px" title="<%= video.title %>"><%= truncate(video.title, length: 20) %></p>
 				<div class="options">
-					<%= link_to image_tag('icons/edit.png'), edit_video_path(id: video), alt: t("views.videos.index.edit") %>
-					<%= link_to image_tag('icons/remove.gif'), '#', alt: t("views.videos.index.remove") %>
+					<%= link_to image_tag('icons/edit.png'), edit_video_path(id: video), alt: t("videos.index.edit") %>
+					<%= link_to image_tag('icons/remove.gif'), video_path(id: video), method: :delete, title: t("videos.index.remove"), confirm: t("videos.index.want_to_remove") %>
 				</div>
 			</div>
 		</div>

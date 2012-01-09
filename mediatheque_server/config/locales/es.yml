@@ -25,43 +25,47 @@ es:
         blank: no puede estar vacío
         too_short: es demsaiado corto
         invalid: no es válido
+  header:
+    signin: entrar
+    signup: registrarse
+    signout: cerrar
   signin:
+    box1title: ¡Si tienes una cuenta!, identifícate
+    box2title: ¿Te gustaría tener un cuenta?
+    signin: entrar
+    create: crear
+    text_create_account_1: Crea tu cuenta en Mediathèque.
+    text_create_account_2: Mediathèque se compromete a proteger tus datos y a mantenerlos estrictamente confidenciales.
+    text_create_account_3: Podrás llevar siempre encima tu películas, libros y discos favoritos para mostrarlos a tus amigos.
     messages:
       user_not_exist: el usuario indicado no existe
       wrong_password: contraseña errónea
-  views:
-    header:
-      signin: entrar
-      signup: registrarse
-      signout: cerrar
+  main:
     signin:
-      box1title: ¡Si tienes una cuenta!, identifícate
-      box2title: ¿Te gustaría tener un cuenta?
-      signin: entrar
-      create: crear
-      text_create_account_1: Crea tu cuenta en Mediathèque.
-      text_create_account_2: Mediathèque se compromete a proteger tus datos y a mantenerlos estrictamente confidenciales.
-      text_create_account_3: Podrás llevar siempre encima tu películas, libros y discos favoritos para mostrarlos a tus amigos.
-    main:
-      signin:
-        video_title: películas
-        music_title: música
-        book_title: libros
-        last_videos: Últimas películas añadidas
-        last_music: Últimas discos añadidos
-        last_books: Últimas libros añadidos
-        empty_video: todavía no has añadido nada a tu videoteca
-        empty_music: todavía no has añadido nada a tu discoteca
-        empty_book: todavía no has añadido nada a tu biblioteca
-    videos:
-      sidebar:
-        title: menú
-        new_video: crear una nueva película
-        add_from_pc: añadir peliculas desde tu ordenador
-        index: listado
-      index:
-        edit: editar
-        remove: eliminar
-      new:
-        title: nuevo video
-        path_desc: escribe la ruta donde se encuantra el archivo de video desde la raiz del sistema
+      video_title: películas
+      music_title: música
+      book_title: libros
+      last_videos: Últimas películas añadidas
+      last_music: Últimas discos añadidos
+      last_books: Últimas libros añadidos
+      empty_video: todavía no has añadido nada a tu videoteca
+      empty_music: todavía no has añadido nada a tu discoteca
+      empty_book: todavía no has añadido nada a tu biblioteca
+  videos:
+    messages:
+      no_video: no existe el video seleccionado
+      destroyed: video eliminado
+      cant_destroy: no se pudo eliminar el video
+    sidebar:
+      title: menú
+      new_video: crear una nueva película
+      add_from_pc: añadir peliculas desde tu ordenador
+      index: listado
+    index:
+      edit: editar
+      remove: eliminar
+      want_to_remove: ¿Desea eliminar?
+    new:
+      title: nuevo video
+      path_desc: escribe la ruta donde se encuantra el archivo de video desde la raiz del sistema
+    

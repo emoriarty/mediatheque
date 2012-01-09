@@ -38,6 +38,9 @@ gem "mobile_fu-rails3", "~> 1.0.6"
 #Transalate routes
 gem 'rails-translate-routes'
 
+#Friendly id for url's
+gem 'friendly_id', '~>4.0.0'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

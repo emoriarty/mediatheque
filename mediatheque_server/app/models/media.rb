@@ -1,7 +1,10 @@
 class Media < ActiveRecord::Base
+  extend FriendlyId
+  
   acts_as_taggable
   acts_as_taggable_on :genres
-  
+  friendly_id :title, :use => :slugged
+
   belongs_to :user
   
   validates :title, :presence => true, :uniqueness => {:scope => :user_id}

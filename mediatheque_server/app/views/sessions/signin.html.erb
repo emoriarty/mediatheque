@@ -7,14 +7,14 @@
 
 <div class="prefix_4 grid_8 suffix_4 separator_40">
 	<div class="box">
-		<h2><%= t('views.signin.box1title') %></h2>
+		<h2><%= t('signin.box1title') %></h2>
 		<div class="content">
 			<%= form_for @user, :url => signin_path, :builder => ApplicationHelper::WebAppThemeFormBuilder, :html => { :class => "form", :method => :post } do |f| %>
 				<%= f.labeled_text_field :nick %>
 				<%= f.labeled_password_field :password %>
 				<div class="group buttons">
 					<button class="button" type="submit">
-					  <img src="assets/icons/tick.png" alt="<%= t('views.signin.signin') %>"><%= t('views.signin.signin').capitalize %>
+					  <img src="assets/icons/tick.png" alt="<%= t('signin.signin') %>"><%= t('signin.signin').capitalize %>
 	          </button>
 				</div>
 			<% end %>
@@ -24,12 +24,12 @@
 <div class="clear"></div>
 <div class="prefix_4 grid_8 suffix_4">
 	<div class="box">
-		<h2><%= t('views.signin.box2title') %></h2>
-		<p><%= t('views.signin.text_create_account_3') %></p>
-		<p><%= t('views.signin.text_create_account_2') %></p>
+		<h2><%= t('signin.box2title') %></h2>
+		<p><%= t('signin.text_create_account_3') %></p>
+		<p><%= t('signin.text_create_account_2') %></p>
 		<div class="group buttons">
 			<button id="create-account" data-url="<%= signup_path %>" class="button" type="submit">
-			  <img src="assets/icons/tick.png" alt="<%= t('views.signin.create') %>"><%= t('views.signin.create').capitalize %>
+			  <img src="assets/icons/tick.png" alt="<%= t('signin.create') %>"><%= t('signin.create').capitalize %>
       </button>
 		</div>
 	</div>

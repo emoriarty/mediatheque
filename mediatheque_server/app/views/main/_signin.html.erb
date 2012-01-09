@@ -1,13 +1,13 @@
 <div class="grid_16">
   <!--h2 class="title"><%#= t('views.main.signin.video_title').capitalize %></h2-->
   <section id="videos">
-    <h2><%= t('views.main.signin.last_videos').capitalize %></h2>
+    <h2><%= t('main.signin.last_videos').capitalize %></h2>
     <% unless current_user.videos? %>
       <% current_user.last_videos.each do |video| %>
         <%= image_tag video.cover_main_list %>
       <% end %>
     <% else %>
-      <h3><%= t('views.main.signin.empty_video').capitalize %></h3>
+      <h3><%= t('main.signin.empty_video').capitalize %></h3>
     <% end %>
   </section>
 </div>
@@ -15,10 +15,10 @@
 <div class="grid_16">
   <!--h2 class="title"><%#= t('views.main.signin.music_title').capitalize %></h2-->
   <section id="music">
-    <h2><%= t('views.main.signin.last_music').capitalize %></h2>
+    <h2><%= t('main.signin.last_music').capitalize %></h2>
     <% if current_user.music? %>
     <% else %>
-      <h3><%= t('views.main.signin.empty_music').capitalize %></h3>
+      <h3><%= t('main.signin.empty_music').capitalize %></h3>
     <% end %>
   </section>
 </div>
@@ -26,10 +26,10 @@
 <div class="grid_16">
   <!--h2 class="title"><%#= t('views.main.signin.book_title').capitalize %></h2-->
   <section id="books">
-    <h2><%= t('views.main.signin.last_books').capitalize %></h2>
+    <h2><%= t('main.signin.last_books').capitalize %></h2>
     <% if current_user.books? %>
     <% else %>
-      <h3><%= t('views.main.signin.empty_book').capitalize %></h3>
+      <h3><%= t('main.signin.empty_book').capitalize %></h3>
     <% end %>
   </section>
 </div>

@@ -1,6 +1,6 @@
 <% content_for :video_content do %>
   <div class="box grid_12 suffix_4">
-    <h2><%= t("views.videos.new.title").capitalize %></h2>
+    <h2><%= t("videos.new.title").capitalize %></h2>
   </div>
   <div class="clear"></div>
   <%= form_for @video, :builder => ApplicationHelper::WebAppThemeFormBuilder, html: { class: 'form' } do |f| %>
@@ -9,7 +9,7 @@
         <%= f.text_fields :title, :director, :writer, :composer %>
         <%= f.labeled_text_area :cast %>
         <%= f.labeled_select :year, (1898..Date.today.year).to_a.map(&:to_s) %>
-        <%= f.labeled_text_field :path, description: t("views.videos.new.path_desc") %>
+        <%= f.labeled_text_field :path, description: t("videos.new.path_desc") %>
         <%= f.labeled_text_field :duration %>
         <%= f.labeled_text_area :plot %>
         <div class="group navform wat-cf">

@@ -11,16 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111206175657) do
+ActiveRecord::Schema.define(:version => 20120109161554) do
 
   create_table "media", :force => true do |t|
-    t.string   "title",              :null => false
+    t.string   "title",                                     :null => false
     t.string   "path"
     t.string   "file"
     t.string   "file_type"
     t.string   "cover"
     t.integer  "year"
-    t.integer  "user_id",            :null => false
+    t.integer  "user_id",                                   :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "director"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20111206175657) do
     t.string   "cover_content_type"
     t.integer  "cover_file_size"
     t.datetime "cover_updated_at"
+    t.string   "slug",               :default => "missing", :null => false
   end
 
   create_table "taggings", :force => true do |t|

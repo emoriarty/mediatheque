@@ -16,11 +16,11 @@
 
 <% content_for :sidebar do %>
 	<div class="grid_4 sidebar">
-		<h3><%= t("views.videos.sidebar.title").capitalize %></h3>
+		<h3><%= t("videos.sidebar.title").capitalize %></h3>
 		<ul class="navigation">
-      <li><%= selected_link_to t("views.videos.sidebar.index").capitalize, videos_path, action: 'index' %></li>
-			<li><%= selected_link_to t("views.videos.sidebar.new_video").capitalize, new_video_path, action: 'new' %></li>
-			<li><%= link_to t("views.videos.sidebar.add_from_pc").capitalize, '#' %></li>
+      <li><%= selected_link_to t("videos.sidebar.index").capitalize, videos_path, action: 'index' %></li>
+			<li><%= selected_link_to t("videos.sidebar.new_video").capitalize, new_video_path, action: 'new' %></li>
+			<li><%= link_to t("videos.sidebar.add_from_pc").capitalize, '#' %></li>
 		</ul>
 	</div>
 <% end %>
