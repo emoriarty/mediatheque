@@ -2,27 +2,26 @@
 	<%= stylesheet_link_tag 'videos' %>
 <% end %>
 
-<% content_for :content do %>
-  <% if content_for?(:video_content) %>
-    <% content_for :content do %>
-      <%= yield(:video_content) %>
-    <% end %>
-  <% else %>
-    <div class="grid_12">
-      <%= yield %>
-    </div>
+<% content_for :menu do %>
+  <li><%= selected_link_to t("videos.sidebar.index").capitalize, videos_path, action: 'index' %></li>
+  <% if params[:action] == 'show' %>
+    <li><%= selected_link_to "#{t('videos.sidebar.edit').capitalize} #{@video.title}", edit_video_path(id: @video), action: 'new' %></li>
   <% end %>
+  <% if params[:action] == 'edit' %>
+    <li><%= selected_link_to "#{t('videos.sidebar.show').capitalize} #{@video.title}", video_path(id: @video), action: 'new' %></li>
+  <% end %>
+  <li><%= selected_link_to t("videos.sidebar.new_video").capitalize, new_video_path, action: 'new' %></li>
+  <li><%= link_to t("videos.sidebar.add_from_pc").capitalize, '#' %></li>
 <% end %>
 
-<% content_for :sidebar do %>
-	<div class="grid_4 sidebar">
-		<h3><%= t("videos.sidebar.title").capitalize %></h3>
-		<ul class="navigation">
-      <li><%= selected_link_to t("videos.sidebar.index").capitalize, videos_path, action: 'index' %></li>
-			<li><%= selected_link_to t("videos.sidebar.new_video").capitalize, new_video_path, action: 'new' %></li>
-			<li><%= link_to t("videos.sidebar.add_from_pc").capitalize, '#' %></li>
-		</ul>
-	</div>
+<% if content_for?(:video_content) %>
+  <% content_for :content do %>
+    <%= yield(:video_content) %>
+  <% end %>
+<% else %>
+  <div class="grid_12 container">
+    <%= yield %>
+  </div>
 <% end %>
  
 <%= render template: 'layouts/application' %>

@@ -4,7 +4,7 @@
     <h2><%= t('main.signin.last_videos').capitalize %></h2>
     <% unless current_user.videos? %>
       <% current_user.last_videos.each do |video| %>
-        <%= image_tag video.cover_main_list %>
+        <%= link_to image_tag(video.cover_main_list), video_path(id: video) %>
       <% end %>
     <% else %>
       <h3><%= t('main.signin.empty_video').capitalize %></h3>

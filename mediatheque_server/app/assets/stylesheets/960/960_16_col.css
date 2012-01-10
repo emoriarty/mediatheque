@@ -26,6 +26,10 @@ body {
   width: 960px;
 }
 
+.container_16 .container{
+  margin: 0;
+}
+
 /* Grid >> Global
 ----------------------------------------------------------------------------------------------------*/
 
@@ -51,6 +55,7 @@ body {
   margin-right: 10px;
 }
 
+.push_05, .pull_05,
 .push_1, .pull_1,
 .push_2, .pull_2,
 .push_3, .pull_3,
@@ -132,6 +137,10 @@ body {
   width: 700px;
 }
 
+.container_16 .grid_12.container{
+  width: 720px;
+} 
+
 .container_16 .grid_13 {
   width: 760px;
 }
@@ -144,10 +153,17 @@ body {
   width: 880px;
 }
 
+.container_16 .grid_15.container {
+  width: 900px;
+}
+
 .container_16 .grid_16 {
   width: 940px;
 }
 
+.container_16 .grid_16.container {
+  width: 940px;
+}
 /* Prefix Extra Space >> 16 Columns
 ----------------------------------------------------------------------------------------------------*/
 
@@ -277,6 +293,10 @@ body {
 /* Push Space >> 16 Columns
 ----------------------------------------------------------------------------------------------------*/
 
+.container_16 .push_05 {
+  left: 30px;
+}
+
 .container_16 .push_1 {
   left: 60px;
 }
@@ -339,6 +359,10 @@ body {
 
 /* Pull Space >> 16 Columns
 ----------------------------------------------------------------------------------------------------*/
+
+.container_16 .pull_05 {
+  left: -30px;
+}
 
 .container_16 .pull_1 {
   left: -60px;

@@ -13,8 +13,8 @@
 .video_item{
 	display:inline-block;
 	width:134px;
-	margin:0 1px;
-	min-height:260px;
+/*	margin:0 1px; */
+	min-height:285px;
 	font-size:.9em;
 }
 
@@ -23,14 +23,7 @@
 }
 
 .info_video{
-	display:inline-block;
-	width: 126px;
 	padding:2px;
 	text-align: left;
 	line-height: 1em;
-}
-
-/* SIDEBAR */
-.sidebar{
-	font-size:.9em;
 }

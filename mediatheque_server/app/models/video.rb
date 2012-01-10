@@ -3,7 +3,7 @@ class Video < Media
   
   has_attached_file :cover, :styles => { 
     :main_list => "183x260#", 
-    :list => "130x198#",
+    :list => "158x226#",
     :thumb => "100x100>" 
   }
 

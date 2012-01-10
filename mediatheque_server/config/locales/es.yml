@@ -60,7 +60,9 @@ es:
       title: menú
       new_video: crear una nueva película
       add_from_pc: añadir peliculas desde tu ordenador
-      index: listado
+      index: Ir al índice
+      edit: editar
+      show: Ver detalle de 
     index:
       edit: editar
       remove: eliminar

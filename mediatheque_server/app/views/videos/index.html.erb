@@ -1,22 +1,26 @@
-<% if @videos.empty? %>
-	<h3>Your videothèque is empty, you have to choices to begin:</h3>
-	<ul>
-	  <li>Creating video manually,</li>
-	  <li>Choose a video file or a directory from your machine.</li>
-	</ul>
-	<p>Each option is on the menu on right side.</p>
-<% else %>
-	<% @videos.each_with_index do |video, index| %>
-		<div class="video_item">
-			<%= link_to image_tag(video.cover_list, class: 'cover'), video_path(id: video) %>
-			<div class="info_video">
-				<p style="margin-bottom: 3px" title="<%= video.title %>"><%= truncate(video.title, length: 20) %></p>
-				<div class="options">
-					<%= link_to image_tag('icons/edit.png'), edit_video_path(id: video), alt: t("videos.index.edit") %>
-					<%= link_to image_tag('icons/remove.gif'), video_path(id: video), method: :delete, title: t("videos.index.remove"), confirm: t("videos.index.want_to_remove") %>
+<% content_for :video_content do %>
+	<div class="grid_15 container push_05">
+		<% if @videos.empty? %>
+			<h3>Your videothèque is empty, you have to choices to begin:</h3>
+			<ul>
+			  <li>Creating video manually,</li>
+			  <li>Choose a video file or a directory from your machine.</li>
+			</ul>
+			<p>Each option is on the menu on right side.</p>
+		<% else %>
+			<% @videos.each_with_index do |video, index| %>
+				<div class="video_item grid_3">
+					<%= link_to image_tag(video.cover_list, class: 'cover'), video_path(id: video) %>
+					<div class="info_video">
+						<p style="margin-bottom: 3px" title="<%= video.title %>"><%= truncate(video.title, length: 24) %></p>
+						<div class="options">
+							<%= link_to image_tag('icons/edit.png'), edit_video_path(id: video), title: t("videos.index.edit") %>
+							<%= link_to image_tag('icons/remove.gif'), video_path(id: video), method: :delete, title: t("videos.index.remove"), confirm: t("videos.index.want_to_remove") %>
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
-		
-	<% end %>
+				
+			<% end %>
+		<% end %>
+	</div>
 <% end %>
