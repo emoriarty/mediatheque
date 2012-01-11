@@ -4,11 +4,11 @@ body {
 	color:#333;
 	font-weight: 300;
 	margin:0;
-  padding:140px 0 0 0;
+  padding:110px 0 0 0;
 }
 
 @media screen{
-  body>div#header{
+  body>header{
    position: fixed;
   }
 }
@@ -54,85 +54,24 @@ hr{
 }
 
 /* HEADER STYLE */
-#header{
-	position:absolute;
-  top:0;
-  left:0;
-  width:100%;	
-  height:140px;
-}
+header{position:absolute; top:0; left:0; width:100%; height:90px; color:#e5e1e1; z-index:1000;}
+header h1{font-size:2.2em; font-weight: 700; padding-top:5px; /*font-family:'century gothic';*/}
+header a{color:#e5e1e1; text-decoration:none;}
+header a:hover{color:#f1f1f1;}
+header ul{font-size:0.9em;}
+header li{display: inline; list-style-type: none;}
 
-header {
-	height:90px;
-	margin-bottom:10px;
-	background:#333;
-	color:#e5e1e1;
-}
+#header{overflow:hidden; padding-bottom: 5px; background:#333; height:60px;}
+#main-navigation{text-align:center; vertical-align:bottom; padding-top:29px;}
+#main-navigation li{padding:0 10px 0 10px;}
+#user-navigation ul{text-align:right; padding-top:29px;}
+#user-navigation li{padding-left:20px; text-align:right; padding-top:29px;}
 
-header h1 {
-	font-size:2.2em;
-	margin-top:20px;
-	font-weight: 700;
-	/*font-family:'century gothic';*/
-}
-
-header a {
-	color:#e5e1e1;
-	text-decoration:none;
-}
-
-header a:hover {
-	color:#f1f1f1;
-}
-
-header ul {
-	font-size:0.9em;
-	margin-top:42px;
-}
-
-header li {
-	padding:0 20px 0 0;
-}
-
-#main{
-	
-}
-
-#user-navigation ul {
-	float:right;
-}
-
-ul.inline li { 
-	display: inline; 
-	list-style-type: none;
-}
-
-
-/* MENU */
-#menu{
-	height:20px;
-	margin-bottom:20px;
-	text-align:center;
-}
-
-#menu ul{
-	font-size:.8em;
-}
-
-#menu li{
-	display:inline;
-	padding:0 20px 0 0;
-}
-
-#menu a{
-	text-decoration:none;
-	color:#333;
-}
-
-#menu a:hover{
-	color:#473f3f;
-	text-decoration:underline;
-}
+#menu{text-align:center; padding-bottom:2px; padding-top:2px; background:#666; border-top:1px solid black; border-bottom:1px solid black;}
+#menu ul{font-size:.8em;}
+#menu li{display:inline; padding:0 10px 0 10px;}
+/*#menu a{text-decoration:none; color:#333;}
+#menu a:hover{color:#473f3f; text-decoration:underline;}*/
  
 /* WRAPPER STYLE */
 #wrapper{
@@ -146,10 +85,6 @@ footer {
 	font-size:.7em;
 	text-align:center;
 }
-
-/* SIDEBAR */
-
-
 
 
 
